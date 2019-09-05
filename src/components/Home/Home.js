@@ -21,7 +21,28 @@ constructor (){
     render() {
       return (
         <div>
-    <h1>Logo</h1>
+   <style>
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+</style>
+
+    <div className='searchForm'>
+      <form>
+        <h1>Search a stay</h1>
+        <h2>Where</h2>
+        <input className='input'
+        placeholder='Anywhere'       
+        />
+        <h2>Type of stay</h2>
+        <select>
+          <option>Hotel/Inn</option>
+          <option>Private Room</option>
+          <option>Entire House</option>
+        </select>
+        <br/>
+        <br/>
+        <button className='button'>Begin</button>
+      </form>
+    </div>
         </div>
       )
     }
