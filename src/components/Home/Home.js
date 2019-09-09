@@ -33,7 +33,7 @@ constructor (){
         placeholder='Anywhere'       
         />
         <h2>Type of stay</h2>
-        <select>
+        <select className='select'>
           <option>Hotel/Inn</option>
           <option>Private Room</option>
           <option>Entire House</option>
@@ -42,6 +42,9 @@ constructor (){
         <br/>
         <button className='button'>Begin</button>
       </form>
+      <footer className='footer'>
+        <h6>2019 Adjuster Stay</h6>
+      </footer>
     </div>
         </div>
       )

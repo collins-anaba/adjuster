@@ -7,7 +7,9 @@
     border-radius: 5px;
     padding: 20px;
     background: rgb(241, 239, 237);
-    font-family: 'Fredoka One', cursive;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 100px auto 300px auto;
+    margin-top: 200px;
 
 }
 
@@ -25,8 +27,18 @@ font-family: 'Fredoka One', cursive;
 
 .input {
     width: 200px;
-    height: 30px;
+    height: 25px;
 border-radius: 5px;
 font-family: 'Fredoka One', cursive;
 
+}
+
+.footer {
+    margin-top: 500px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.select{
+    border-radius: 5px;
+ border: black , 2px;
 }
