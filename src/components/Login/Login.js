@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link, Redirect} from 'react-router-dom';
 import './Login.css';
 import axios from 'axios';
 
@@ -34,8 +35,23 @@ class Login extends Component {
     }
 render(){
     return (
-        <div>
-
+        <div className=' login-container'>
+                <h1>Login</h1>
+                <br/>
+                <input
+                type='text'
+                placeholder='Username'
+                onChange={this.handleUsername}
+                />
+                <br/>
+                <input
+                type='password'
+                placeholder='Password'
+                onChange={this.handlePassword}
+                onKeyPress={this.handleEnter}
+                />
+                <br/>
+                <button onClick= { this.handleClick} onKeyPress={this.handleEnter}>Log In</button>
         </div>
     )
 }
