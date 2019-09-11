@@ -1,0 +1,8 @@
+.h1{
+    padding: 20px;
+    margin: 100px auto 300px auto;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+}

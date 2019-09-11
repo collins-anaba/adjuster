@@ -38,20 +38,23 @@ render(){
         <div className=' login-container'>
                 <h1>Login</h1>
                 <br/>
-                <input
+                <input className='input2'
                 type='text'
                 placeholder='Username'
                 onChange={this.handleUsername}
                 />
                 <br/>
-                <input
+                <br/>
+                <br/>
+                <input className='input1'
                 type='password'
                 placeholder='Password'
                 onChange={this.handlePassword}
                 onKeyPress={this.handleEnter}
                 />
                 <br/>
-                <button onClick= { this.handleClick} onKeyPress={this.handleEnter}>Log In</button>
+                <br/>
+                <button className='button1' onClick= { this.handleClick} onKeyPress={this.handleEnter}>Log In</button>
         </div>
     )
 }
