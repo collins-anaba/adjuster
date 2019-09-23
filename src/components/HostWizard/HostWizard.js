@@ -8,14 +8,11 @@ class HostWizard extends Component {
         super(props)
         console.log(this.props)
         this.state = {
-            city: '',
-            state: '',
-            zipcode: '',
             image:null,
-            Price: '',
-            name:'',
+            price: '',
+            nameOfStay:'',
             telephoneNumber: '',
-            streetAddress: '',
+            address: '',
             stayType: '',
             
         }
@@ -37,23 +34,25 @@ class HostWizard extends Component {
         this.setState({[e.target.name]: e.target.value})
     }
 
-    handleStep1 = (e) => {
+    handleStep = (e) => {
         if(e ='') {
             alert('Please fill out all information')
         } else {
-        let {Company, JobTitle, Address,City,State,Zipcode} = this.state
-        this.props.handleCompany(Company)
-        this.props.handleJobTitle(JobTitle)
-        this.props.handleAddress(Address)
-        this.props.handleCity(City)
-        this.props.handleState(State)
-        this.props.handleZipcode(Zipcode) }
+        let {image, price, nameOfStay,telephoneNumber,address,stayType} = this.state
+        this.props.handleImage(image)
+        this.props.handlePrice(price)
+        this.props.handleName(nameOfStay)
+        this.props.handleTelephoneNumber(telephoneNumber)
+        this.props.handleAddress(address)
+        this.props.handleStayType(stayType) }
     }
 
 
     
 
     render(){
+        let {image, price, name,telephoneNumber,address,stayType} = this.props
+
         return(
             <div>
                 <form>
@@ -61,7 +60,8 @@ class HostWizard extends Component {
     <h1> Tell us about your stay</h1>
     <br/>
     <h2>What type of stay is this?</h2>
-    <select>
+    <select className='select1' onChange={e=> this.handleChange(e)}
+    name='stayType'>
         <option>Choose one...</option>
         <option>Hotel/Inn</option>
         <option>Private room</option>
@@ -69,13 +69,15 @@ class HostWizard extends Component {
     </select>
     <br/>
     <h2>Where is the stay located?</h2>
-    <input placeholder='Enter Address'></input>
+    <input className='locationInput' onchange={e=> this.handleChange(e)} name='address' placeholder='Enter Address'/>
     <br/>
+    <h2>Name of Stay?</h2>
+    <input className='nameInput' onChange={e=> this.handleChange(e)} name='nameOfStay'/>
     <h2>How much is it a night?</h2>
-    <input></input>
+    <input className='priceInput' onChange={e=> this.handleChange(e)} name='price'/>
     <br/>
     <h2>Whats the contact number</h2>
-    <input placeholder='Enter Contact Number'/>
+    <input className='numberInput' onChange={e=> this.handleChange(e)} name='telephoneNumber' placeholder='Enter Contact Number'/>
 <h2>Do you have a picture of the stay? Upload here</h2>
 <input type='file'/>
 <br/>
