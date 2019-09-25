@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import './HostWizard.css';
 
@@ -96,5 +97,10 @@ value={`${image}`}/>
         )
     }
 }
-
-export default HostWizard
+const mapStateToProps = (state) =>{
+    const {image, price, nameOfStay,telephoneNumber,address,stayType}=state
+    return {
+        image, price, nameOfStay,telephoneNumber,address,stayType
+    }
+}
+export default connect (mapStateToProps)(HostWizard)
