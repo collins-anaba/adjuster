@@ -51,17 +51,18 @@ class HostWizard extends Component {
     
 
     render(){
-        let {image, price, name,telephoneNumber,address,stayType} = this.props
+        let {image, price, nameOfStay,telephoneNumber,address,stayType} = this.props
 
         return(
-            <div>
+            <div className='wizard-container'>
                 <form>
 
     <h1> Tell us about your stay</h1>
     <br/>
     <h2>What type of stay is this?</h2>
     <select className='select1' onChange={e=> this.handleChange(e)}
-    name='stayType'>
+    name='stayType'
+    value={`${stayType}`}>
         <option>Choose one...</option>
         <option>Hotel/Inn</option>
         <option>Private room</option>
@@ -69,20 +70,27 @@ class HostWizard extends Component {
     </select>
     <br/>
     <h2>Where is the stay located?</h2>
-    <input className='locationInput' onchange={e=> this.handleChange(e)} name='address' placeholder='Enter Address'/>
+    <input className='locationInput' onchange={e=> this.handleChange(e)} name='address' placeholder='Enter Address' type='text'
+    value={`${address}`}/>
     <br/>
     <h2>Name of Stay?</h2>
-    <input className='nameInput' onChange={e=> this.handleChange(e)} name='nameOfStay'/>
+    <input className='nameInput' onChange={e=> this.handleChange(e)} name='nameOfStay' type='text'
+    value={`${nameOfStay}`}/>
     <h2>How much is it a night?</h2>
-    <input className='priceInput' onChange={e=> this.handleChange(e)} name='price'/>
+    <input className='priceInput' onChange={e=> this.handleChange(e)} name='price' type='text'
+    value={`${price}`}/>
     <br/>
     <h2>Whats the contact number</h2>
-    <input className='numberInput' onChange={e=> this.handleChange(e)} name='telephoneNumber' placeholder='Enter Contact Number'/>
+    <input className='numberInput' onChange={e=> this.handleChange(e)} name='telephoneNumber' placeholder='Enter Contact Number' type='text'
+    value={`${telephoneNumber}`}/>
 <h2>Do you have a picture of the stay? Upload here</h2>
-<input type='file'/>
+<input type='file'
+value={`${image}`}/>
 <br/>
 <br/>
-<button>Next</button>
+<Link to='/Host-dashboard'>
+<button className='next-button' onClick={e=>this.handleStep(e)}>Next</button>
+</Link>
                 </form>
             </div>
         )
