@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import{handleImage,handlePrice,handleAddress,handleNameOfStay,handleStayType,handleTelephoneNumber} from '../../redux/reducer'
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import './HostWizard.css';
 
@@ -42,7 +43,7 @@ class HostWizard extends Component {
         let {image, price, nameOfStay,telephoneNumber,address,stayType} = this.state
         this.props.handleImage(image)
         this.props.handlePrice(price)
-        this.props.handleName(nameOfStay)
+        this.props.handleNameOfStay(nameOfStay)
         this.props.handleTelephoneNumber(telephoneNumber)
         this.props.handleAddress(address)
         this.props.handleStayType(stayType) }
@@ -103,4 +104,4 @@ const mapStateToProps = (state) =>{
         image, price, nameOfStay,telephoneNumber,address,stayType
     }
 }
-export default connect (mapStateToProps)(HostWizard)
+export default connect (mapStateToProps,{handleAddress,handleImage,handleNameOfStay,handleStayType,handleTelephoneNumber,handlePrice,handleAddress})(HostWizard)

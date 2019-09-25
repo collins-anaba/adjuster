@@ -43,11 +43,11 @@ export const handleTelephoneNumber = (telephoneNumber) => {
     }
 }
 
-const HANLDE_ADDRESS = 'HANDLE_ADDRESS'
+const HANDLE_ADDRESS = 'HANDLE_ADDRESS'
 
 export const handleAddress = (address) => {
     return{
-        type: HANLDE_ADDRESS,
+        type: HANDLE_ADDRESS,
         payload: address
     }
 }
@@ -78,7 +78,6 @@ switch(type){
         return{...state, telephoneNumber: payload}
     case HANDLE_STAYTYPE:
         return{...state, stayType: payload}
-    default: return state
-    
+    default: return state  
 }
 }
